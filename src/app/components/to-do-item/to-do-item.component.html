@@ -1,0 +1,49 @@
+<button type="button" class="btn-close fixed" aria-label="Close" routerLink="/tasks"></button>
+
+<div class="w-30 h-auto m-3 d-flex flex-column justify-content-between">
+    <div class="mb-3">
+        <button class="btn btn-success" (click)="changeCollapse('title')">
+            Title
+        </button>
+        <div [ngbCollapse]="collapseControl.title">
+            <div class="card card-body">
+                {{item !== undefined ? item.title : 'Wait a minute'}}
+            </div>
+        </div>      
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-success" (click)="changeCollapse('description')">
+            Description
+        </button>
+        <div [ngbCollapse]="collapseControl.description">
+            <div class="card card-body">
+                {{item !== undefined ? item.description : ''}}
+            </div>
+        </div>      
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-success" (click)="changeCollapse('date')">
+            Created at
+        </button>
+        <div [ngbCollapse]="collapseControl.date">
+            <div class="card card-body">
+                {{item !== undefined && item.date !== undefined ? item.date : 'Created before the time functionality was introduced'}}
+            </div>
+        </div>      
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-success" (click)="changeCollapse('status')">
+            Status
+        </button>
+        <div [ngbCollapse]="collapseControl.status">
+            <div class="card card-body">
+                {{item !== undefined && item.isExecuted ? 'Executed!' : 'Not yet...'}}
+            </div>
+        </div>      
+    </div>        
+</div>
+
+ 
+
+
+

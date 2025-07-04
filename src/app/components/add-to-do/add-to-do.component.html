@@ -1,0 +1,18 @@
+<form [formGroup]="fb" [class]="['m-3', 'p-2', 'w-25', 'h-auto', 'form-abs', display_valid ? 'form-abs-vis' : '']">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input id="title" type="text" class="form-control" formControlName="title">
+        <div class="form-text">
+            @if (fb.controls.title.errors !== null && fb.controls.title.touched) {
+                You will fill this field anyway
+            } @else {
+                Fill this field
+            }
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input id="description" type="text" class="form-control" formControlName="description">        
+    </div>
+    <button class="btn btn-outline-primary mt-1" (click)="addToList()">Add To The List</button>
+</form>

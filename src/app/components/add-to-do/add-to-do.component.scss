@@ -1,0 +1,26 @@
+
+input.ng-touched.ng-invalid {
+  border-color: var(--bs-danger);
+  &:focus {
+    --bs-text-opacity: 0.5;
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.4);
+    
+  }
+}
+
+.form-abs {
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.4);
+  background-color: white;
+  position: absolute;
+  left: 0px;
+  top: 13%;
+  transition: opacity 500ms, top 500ms, z-index 500ms;
+  z-index: -1;
+  opacity: 0;
+  &-vis {
+    top: 15%;
+    z-index: 10;
+    opacity: 1;
+  }
+}

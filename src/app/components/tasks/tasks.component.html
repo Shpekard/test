@@ -1,0 +1,45 @@
+<h1 class="font-monospace w-25 m-3">
+    A To Do List
+</h1>
+<div class="w-50">
+    <div class="d-flex justify-content-between w-75">
+    <button class="btn btn-bn-primary mb-3" (click)="sendBackground()">Add</button>
+    <div class="w-50 input-group mb-3">
+        <span class="input-group-text">
+            <i class="bi bi-search"></i>
+        </span>
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Search"
+        (input)="onInput($event)">
+    </div>    
+</div>
+</div>
+
+<app-add-to-do></app-add-to-do>
+<ul class="list-group list-group-flush w-50">
+    @for (todo of arrDB; track $index) {
+        <li class="list-group-item d-flex justify-content-between  w-75 background">
+            <div class="w-85">            
+                <p [class]="['fs-4', 'text-truncate', todo.isExecuted ? 'text-decoration-line-through' : '' ]"  [class.text-secondary]="todo.isExecuted">
+                    <i (click)="changeStatus(todo.id)"
+                    role="button"
+                    placement="bottom"
+                    [ngbTooltip]="!todo.isExecuted ? 'Mark as finished' : 'Mark as unfinished'"
+                    [class]="['bi', 'bi-check2-circle', 'fs-4', todo.isExecuted ? 'executed' : '']"></i>
+                    {{todo.title}}</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-start h">
+                <i class="bi bi-three-dots fs-4 border-r" role="button" [routerLink]="['/tasks', todo.id]"
+                placement="bottom"
+                ngbTooltip="More Info"></i>
+                <i (click)="delete(todo.id)" 
+                class="bi bi-trash fs-4 border-l trash" role="button"
+                placement="bottom" ngbTooltip="Delete an item"></i>               
+            </div>
+        </li>
+    }
+</ul>
+
+

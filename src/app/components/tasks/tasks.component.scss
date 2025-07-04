@@ -1,0 +1,54 @@
+
+.background {
+    background-color: #FAFAFB;
+}
+
+.executed {
+    color: var(--bs-success);
+}
+
+.trash {
+    color: var(--bs-danger);
+}
+
+.h {
+    height: 35px;
+    width: 70px;
+    margin-top: 2px;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.border {
+    border-color: black;
+    border-style: solid;
+    
+    &-l {
+        border-left: 1px solid black;
+        padding-left: 5px;
+    }
+
+    &-r {
+       border-right: 1px solid black;
+       padding-right: 5px; 
+    }
+}
+
+.btn-bn-primary {
+    margin-left: 10px;
+    width: 60px;
+    border-radius: 10px;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-bg: rgb(73, 153, 83);
+    --bs-btn-hover-bg: rgba(73, 153, 83, 0.7);
+    --bs-btn-active-bg: rgba(73, 153, 83, 0.7);
+    --bs-btn-active-border-color: transparent;
+}
