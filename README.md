@@ -1,3 +1,11 @@
+# IndexedDB
+
+Перед запуском в сервисе *index.service.ts* выберите актуальную версию **IndexedDB**. Иначе возникнет ошибка
+
+```
+DOMException: The operation failed because the stored database is a higher version than the version requested.
+```
+
 # Test
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
