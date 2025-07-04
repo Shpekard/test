@@ -14,7 +14,7 @@ export class IndexService {
   store?: IDBObjectStore
 
   startDB() {
-    let req = indexedDB.open('todo', 4);  
+    let req = indexedDB.open('todo', 1);  
 
     req.onupgradeneeded = () => {
       this.db = req.result;
@@ -54,7 +54,10 @@ export class IndexService {
 
     counter.onsuccess = () => {
       
-      let num = Math.max(...counter.result as Array<number>);
+      let num = -1;
+      if (counter.result.length != 0) {
+        num = Math.max(...counter.result as Array<number>);
+      }
 
       let date = new Date().toISOString();
       request = todo.add({...obj, id: ++num, date: date});
