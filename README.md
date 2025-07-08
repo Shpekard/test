@@ -1,6 +1,6 @@
 # IndexedDB
 
-Перед запуском в сервисе *index.service.ts* выберите актуальную версию **IndexedDB** (или выше)
+Перед запуском в сервисе *index.service.ts* выберите актуальную версию **IndexedDB** для *todo* (или выше)
 
 # Test
 
