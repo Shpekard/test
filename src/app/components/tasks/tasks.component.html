@@ -4,7 +4,7 @@
 <div class="w-50">
     <div class="d-flex justify-content-between w-75">
     <button class="btn btn-bn-primary mb-3" (click)="sendBackground()">Add</button>
-    <div class="w-50 input-group mb-3">
+    <div class="w-50 input-group mb-3 me-3">
         <span class="input-group-text">
             <i class="bi bi-search"></i>
         </span>
@@ -19,7 +19,7 @@
 
 <app-add-to-do></app-add-to-do>
 <ul class="list-group list-group-flush w-50">
-    @for (todo of arrDB; track $index) {
+    @for (todo of arrDB; track todo.id) {
         <li class="list-group-item d-flex justify-content-between  w-75 background">
             <div class="w-85">            
                 <p [class]="['fs-4', 'text-truncate', todo.isExecuted ? 'text-decoration-line-through' : '' ]"  [class.text-secondary]="todo.isExecuted">
@@ -38,6 +38,10 @@
                 class="bi bi-trash fs-4 border-l trash" role="button"
                 placement="bottom" ngbTooltip="Delete an item"></i>               
             </div>
+        </li>
+    } @empty {
+        <li class="list-group-item d-flex justify-content-between  w-75 background">
+            The list is currently empty
         </li>
     }
 </ul>

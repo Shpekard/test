@@ -3,11 +3,11 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { IndexService } from '../../services/index.service';
 import { ToDoDb } from '../../types/todo';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
-import { map, of } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-to-do-item',
-  imports: [RouterLink, NgbCollapse],
+  imports: [RouterLink, NgbCollapse, DatePipe],
   templateUrl: './to-do-item.component.html',
   styleUrl: './to-do-item.component.scss'
 })

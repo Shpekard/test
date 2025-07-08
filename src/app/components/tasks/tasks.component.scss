@@ -1,3 +1,4 @@
+@use 'bootstrap/scss/bootstrap' as bs;
 
 .background {
     background-color: #FAFAFB;
@@ -8,7 +9,11 @@
 }
 
 .trash {
-    color: var(--bs-danger);
+    color: bs.$red;
+    transition: color 500ms;
+    &:hover {
+        color: bs.$red-600;
+    }
 }
 
 .h {
@@ -47,8 +52,8 @@
     --bs-btn-color: var(--bs-white);
     --bs-btn-hover-color: var(--bs-white);
     --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-bg: rgb(73, 153, 83);
-    --bs-btn-hover-bg: rgba(73, 153, 83, 0.7);
-    --bs-btn-active-bg: rgba(73, 153, 83, 0.7);
+    --bs-btn-bg: #{bs.$green};
+    --bs-btn-hover-bg: #{bs.$green-400};
+    --bs-btn-active-bg: #{bs.$green-400};
     --bs-btn-active-border-color: transparent;
 }

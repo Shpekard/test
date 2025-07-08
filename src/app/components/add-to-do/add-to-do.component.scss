@@ -1,11 +1,12 @@
+@use 'bootstrap/scss/bootstrap' as bs;
 
 input.ng-touched.ng-invalid {
   border-color: var(--bs-danger);
-  &:focus {
-    --bs-text-opacity: 0.5;
-    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.4);
-    
+  --bs-focus-ring-color: #{bs.$red-200};
+  &:focus{
+    box-shadow: 0 0 #{bs.$focus-ring-blur} #{bs.$focus-ring-width} var(--bs-focus-ring-color);
   }
+  
 }
 
 .form-abs {

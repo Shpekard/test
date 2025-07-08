@@ -27,7 +27,7 @@
         </button>
         <div [ngbCollapse]="collapseControl.date">
             <div class="card card-body">
-                {{item !== undefined && item.date !== undefined ? item.date : 'Created before the time functionality was introduced'}}
+                {{item !== undefined && item.date !== undefined ? (item.date | date:'dd-MM-yyyy') : 'Something went wrong'}}
             </div>
         </div>      
     </div>
@@ -42,8 +42,4 @@
         </div>      
     </div>        
 </div>
-
- 
-
-
 
